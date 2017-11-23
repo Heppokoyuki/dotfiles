@@ -6,9 +6,9 @@
 
 ## Usage
 
-make.sh TeXビルド用
+[make.sh](/make.sh) TeXビルド用
 
-setup.sh ArchLinuxの環境構築スクリプトを作りたい
+[setup.sh](/setup.sh) ArchLinuxの環境構築スクリプトを作りたい
 
 ## Installation
 
