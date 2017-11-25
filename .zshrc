@@ -11,6 +11,10 @@ cd ()
 }
 export PATH="$PATH:/home/yuki/.gem/ruby/1.9.1/bin"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+setopt auto_cd
+setopt correct
+setopt list_packed
+setopt nolistbeep
 # vcs_infoロード    
 autoload -Uz vcs_info    
 # PROMPT変数内で変数参照する    
