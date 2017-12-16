@@ -20,4 +20,4 @@
 
 ## License
 
-MIT
+[MIT]( dotfiles/LICENSE )
