@@ -20,4 +20,4 @@
 
 ## License
 
-[MIT]( dotfiles/LICENSE )
+[MIT](http://github.com/Heppokoyuki/dotfiles/LICENSE)
