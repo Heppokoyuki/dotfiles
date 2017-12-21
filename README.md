@@ -20,4 +20,4 @@
 
 ## License
 
-使用はご自由にどうぞ。
+[MIT](https://github.com/Heppokoyuki/dotfiles/blob/master/LICENSE)
