@@ -15,6 +15,7 @@ setopt auto_cd
 setopt correct
 setopt list_packed
 setopt nolistbeep
+setopt nobeep
 # vcs_infoロード    
 autoload -Uz vcs_info    
 # PROMPT変数内で変数参照する    

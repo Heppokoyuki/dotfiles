@@ -1,7 +1,3 @@
-if &compatible
-set nocompatible              
-endif
-
 set runtimepath+=/home/yuki/.vim/dein/repos/github.com/Shougo/dein.vim
 
 call dein#begin('/home/yuki/.vim/dein')
@@ -13,6 +9,10 @@ call dein#add('justmao945/vim-clang')
 call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('scrooloose/nerdtree')
 call dein#add('tpope/vim-surround')
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('thinca/vim-ref')
+call dein#add('tomtom/tcomment_vim')
+call dein#add('osyo-manga/vim-watchdogs')
 call dein#end()
 
 filetype plugin indent on

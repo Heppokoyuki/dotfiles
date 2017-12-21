@@ -2,7 +2,7 @@
 # It will not be overwritten, so edit it as you like.
 #
 # Should you change your keyboard layout some time, delete
-# this file and re-run i3-config-wizard(1).
+# this file ande-run i3-config-wizard(1).
 #
 
 # i3 config file (v4)
@@ -48,7 +48,8 @@ bindsym $mod+Shift+q kill
 # installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-bindsym $mod+z exec --no-startup-id xrandr --output DP1 --right-of eDP1
+bindsym $mod+z exec --no-startup-id xrandr --output HDMI2 --auto --right-of eDP1
+bindsym $mod+Shift+z exec --no-startup-id xrandr --output DP1 --auto --above eDP1
 
 # change focus
 bindsym $mod+j focus left
@@ -161,10 +162,18 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+ colors {
+        background #859ea3
+        focused_workspace #2dce73 #2b9656 #ffffff
+ }
         status_command i3status
+        position       top
 }
+
+
 exec --no-startup-id fcitx
-exec --no-startup-id feh --bg-scale ~/Pictures/toho.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/wall.jpg
+bindsym $mod+n exec --no-startup-id i3lock -i ~/Pictures/lock.png
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
