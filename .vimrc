@@ -1,3 +1,4 @@
+" 適当に変えて
 set runtimepath+=/home/yuki/.vim/dein/repos/github.com/Shougo/dein.vim
 
 call dein#begin('/home/yuki/.vim/dein')
@@ -13,6 +14,8 @@ call dein#add('Shougo/neocomplete.vim')
 call dein#add('thinca/vim-ref')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('osyo-manga/vim-watchdogs')
+call dein#add('justmao945/vim-clang')
+call dein#add('tomasr/molokai')
 call dein#end()
 
 filetype plugin indent on
@@ -34,6 +37,7 @@ set cursorline
 set number
 set noswapfile
 set visualbell
+set clipboard=unnamed,autoselect
 
 let g:indent_guides_enable_on_vim_startup = 1
 map <C-n> :NERDTreeToggle<CR>
