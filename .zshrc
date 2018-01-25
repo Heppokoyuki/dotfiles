@@ -4,6 +4,7 @@ autoload -U compinit; compinit
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
                              /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin \
                              /usr/local/git/bin
+zstyle ':completion:*' menu select
 neofetch
 cd ()
 {
@@ -60,3 +61,4 @@ setopt prompt_subst
 
 # プロンプトの右側(RPROMPT)にメソッドの結果を表示させる
 RPROMPT='`rprompt-git-current-branch`'
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"

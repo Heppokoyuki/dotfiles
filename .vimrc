@@ -19,7 +19,7 @@ call dein#add('tomasr/molokai')
 call dein#end()
 
 filetype plugin indent on
-syntax enable
+syntax on
 
 set fenc=utf-8
 set autoread
@@ -41,3 +41,8 @@ set clipboard=unnamed,autoselect
 
 let g:indent_guides_enable_on_vim_startup = 1
 map <C-n> :NERDTreeToggle<CR>
+
+let g:php_baselib = 1
+let g:php_htmlInStrings = 1
+let g:php_noShortTags = 1
+let g:php_sql_query = 1

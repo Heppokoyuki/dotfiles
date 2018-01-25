@@ -13,3 +13,4 @@ esac
 ln -sf $DOTPATH/.vimrc $HOME/.vimrc
 ln -sf $DOTPATH/.zshrc $HOME/.zshrc
 ln -sf $DOTPATH/config $HOME/.config/i3/config
+ln -sf $DOTPATH/.Xdefaults $HOME/.Xdefaults
