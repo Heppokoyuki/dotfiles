@@ -56,7 +56,7 @@ URxvt*iso14755: false
 
 ! Color
 ! urxvt*shading: 20 
-urxvt*shading: 10
+urxvt*shading: 20
 URxvt*inheritPixmap: true
 
 ! Molokai
