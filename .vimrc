@@ -18,6 +18,13 @@ call dein#add('justmao945/vim-clang')
 call dein#add('tomasr/molokai')
 call dein#end()
 
+if dein#check_install()
+  call dein#install()
+endif
+
+let g:powerline_pycmd="py3"
+set laststatus=2
+
 filetype plugin indent on
 syntax on
 
@@ -130,3 +137,18 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+augroup MyXML
+    autocmd FileType xml inoremap <buffer> </ </<C-x><C-o>
+    autocmd FileType html inoremap <buffer> </ </<C-x><C-o>
+augroup END
+
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
+
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+
