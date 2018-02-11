@@ -8,7 +8,7 @@ zstyle ':completion:*' menu select
 neofetch
 cd ()
 {
-    builtin cd "$@" && ls
+    builtin cd "$@" && ls -a
 }
 export PATH="$PATH:/home/yuki/.gem/ruby/1.9.1/bin"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
