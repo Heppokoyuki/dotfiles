@@ -45,6 +45,8 @@ set number
 set noswapfile
 set visualbell
 set clipboard=unnamed,autoselect
+set noautoindent
+set nosmartindent
 
 let g:indent_guides_enable_on_vim_startup = 1
 noremap :tree :NERDTreeToggle
