@@ -36,6 +36,9 @@ bindsym $mod+Return exec urxvt
 # start a chromium
 bindsym $mod+c exec chromium
 
+# start a firefox
+bindsym $mod+Shift+f exec firefox
+
 # start a boostnote
 bindsym $mod+b exec boostnote
 
@@ -173,7 +176,7 @@ bar {
 
 exec --no-startup-id fcitx
 exec --no-startup-id feh --bg-scale ~/Downloads/wall2.jpg
-bindsym $mod+n exec --no-startup-id i3lock -i ~/Pictures/lock.png
+bindsym $mod+n exec --no-startup-id i3lock -i ~/Pictures/lockscreen.png
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume

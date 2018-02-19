@@ -13,7 +13,7 @@ cd ()
 export PATH="$PATH:/home/yuki/.gem/ruby/1.9.1/bin"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 setopt auto_cd
-setopt correct
+# setopt correct
 setopt list_packed
 setopt nolistbeep
 setopt nobeep
@@ -40,7 +40,7 @@ function rprompt-git-current-branch {
     branch_status="%F{cyan}?"
   elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
     # git addされていないファイルがある状態
-    branch_status="%F{red}+"
+    branch_status="%F{cyan}+"
   elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
     # git commitされていないファイルがある状態
     branch_status="%F{yellow}!"
