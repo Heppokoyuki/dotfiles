@@ -16,12 +16,14 @@ call dein#add('tomtom/tcomment_vim')
 call dein#add('osyo-manga/vim-watchdogs')
 call dein#add('justmao945/vim-clang')
 call dein#add('tomasr/molokai')
-call dein#add('scrooloose/syntastic')
+" call dein#add('scrooloose/syntastic')
 call dein#end()
 
 if dein#check_install()
   call dein#install()
 endif
+
+call map(dein#check_clean(), "delete(v:val, 'rf')")
 
 let g:powerline_pycmd="py3"
 set laststatus=2
@@ -155,14 +157,14 @@ nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
 
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
-let g:syntastic_mode_map = {'mode': 'passive'}
-augroup AutoSyntastic
-    autocmd!
-    autocmd InsertLeave,TextChanged * call s:syntastic()
-augroup END
-function! s:syntastic()
-    w
-    SyntasticCheck
-endfunction
+" let g:syntastic_enable_signs=1
+"let g:syntastic_auto_loc_list=2
+"let g:syntastic_mode_map = {'mode': 'passive'}
+"augroup AutoSyntastic
+"    autocmd!
+"    autocmd InsertLeave,TextChanged * call s:syntastic()
+"augroup END
+"function! s:syntastic()
+"    w
+"    SyntasticCheck
+" endfunction
