@@ -1,7 +1,7 @@
 " 適当に変えて
-set runtimepath+=/home/yuki/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin('/home/yuki/.vim/dein')
+call dein#begin('~/.vim/dein')
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
