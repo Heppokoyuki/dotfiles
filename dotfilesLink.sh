@@ -16,6 +16,13 @@ yorn(){
         esac
     done
 }
+echo -e "     .___      __    _____.__.__                 "
+echo -e "   __| _/_____/  |__/ ____\__|  |   ____   ______"
+echo -e "  / __ |/  _ \   __\   __\|  |  | _/ __ \ /  ___/"
+echo -e " / /_/ (  <_> )  |  |  |  |  |  |_\  ___/ \___ \ "
+echo -e " \____ |\____/|__|  |__|  |__|____/\___  >____  >"
+echo -e "      \/                               \/     \/ "
+
 
 DOTPATH=$HOME/dotfiles
 
@@ -31,6 +38,7 @@ else
         git clone https://github.com/Shougo/dein.vim \
             ~/.vim/dein/repos/github.com/Shougo/dein.vim
     else
+        :
     fi
     ln -sf $DOTPATH/.vimrc $HOME/.vimrc
     ln -sf $DOTPATH/.zshrc $HOME/.zshrc
