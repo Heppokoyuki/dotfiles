@@ -14,7 +14,6 @@ call dein#add('thinca/vim-ref')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('osyo-manga/vim-watchdogs')
 call dein#add('tomasr/molokai')
-call dein#add('fatih/vim-go')
 " call dein#add('scrooloose/syntastic')
 call dein#end()
 

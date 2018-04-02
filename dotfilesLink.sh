@@ -40,6 +40,7 @@ else
     else
         :
     fi
+    sudo pacman -Syu powerline powerline-fonts
     ln -sf $DOTPATH/.vimrc $HOME/.vimrc
     ln -sf $DOTPATH/.zshrc $HOME/.zshrc
     ln -sf $DOTPATH/config $HOME/.config/i3/config
