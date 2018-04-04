@@ -20,8 +20,6 @@ setopt nobeep
 autoload -Uz vcs_info    
 setopt prompt_subst    
 
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-
 function powerline_precmd() {
     PS1="$(powerline-shell --shell zsh $?)"
 }

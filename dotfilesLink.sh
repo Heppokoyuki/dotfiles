@@ -40,7 +40,10 @@ else
     else
         :
     fi
-    sudo pacman -Syu powerline powerline-fonts
+    sudo pacman -S powerline-fonts python python-pip neofetch ruby
+    sudo pip install --upgrade pip
+    sudo pip install powerline-shell
+
     ln -sf $DOTPATH/.vimrc $HOME/.vimrc
     ln -sf $DOTPATH/.zshrc $HOME/.zshrc
     ln -sf $DOTPATH/config $HOME/.config/i3/config
