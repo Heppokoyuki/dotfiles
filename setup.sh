@@ -37,15 +37,11 @@ echo 'MatchIsKeyboard "yes"'  >> /etc/X11/xorg.conf.d/10-keyboard.conf
 echo 'Option "XkbLayout" "jp"'  >> /etc/X11/xorg.conf.d/10-keyboard.conf
 echo 'EndSection'  >> /etc/X11/xorg.conf.d/10-keyboard.conf
 
-pacman -S git chromium zsh
-yaourt -S eagle xournal boostnote
-git clone https://github.com/zsh-users/zsh-completions.git
-echo fpath=(~/.zsh-completions $fpath) >> ~/.zshrc
-echo autoload -U compinit; compinit >> ~/.zshrc
-echo zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \ >> ~/.zshrc
-echo                         /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin \ >> ~/.zshrc
-echo /usr/local/git/bin >> ~/.zshrc
-echo /bin/zsh >> /etc/shells
-chsh
-echo mokemoke
-echo /bin/zsh
+pacman -S adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts
+
+pacman -S intel-ucode efibootmgr grub
+
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinuxGrub --recheck
+mkdir /boot/EFI/boot
+cp /boot/EFI/ArchLinuxGrub/grubx64.efi /boot/EFI/boot/bootx64.efi
+grub-mkconfig -o /boot/grub/grub.cfg
