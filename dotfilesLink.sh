@@ -40,7 +40,7 @@ else
     else
         :
     fi
-    sudo pacman -S powerline-fonts python python-pip neofetch ruby
+    sudo pacman -S powerline-fonts python python-pip neofetch ruby sakura
     sudo pip install --upgrade pip
     sudo pip install powerline-shell
 
