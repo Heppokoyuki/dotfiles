@@ -45,3 +45,4 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux
 mkdir /boot/EFI/boot
 cp /boot/EFI/ArchLinuxGrub/grubx64.efi /boot/EFI/boot/bootx64.efi
 grub-mkconfig -o /boot/grub/grub.cfg
+# to setup the keylayout on the Window Manager, Please use your fcitx configuration tool.
