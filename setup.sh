@@ -15,7 +15,7 @@ pacman -S vim
 passwd
 
 useradd -m -g wheel -s /bin/zsh yuki
-passwd mokemoke
+passwd hoge
 
 visudo
 
