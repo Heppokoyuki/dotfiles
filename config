@@ -53,7 +53,7 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 bindsym $mod+z exec --no-startup-id xrandr --output HDMI2 --off
 bindsym $mod+Shift+z exec --no-startup-id xrandr --output HDMI2 --auto --above eDP1
-bindsym $mod+Shift+x exec --no-startup-id xrandr --output HDMI2 --auto --right-of eDP1
+bindsym $mod+Shift+x exec --no-startup-id xrandr --output HDMI2 --auto --right-of eDP1 --rotate left
 
 # change focus
 bindsym $mod+j focus left
@@ -167,16 +167,22 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
  colors {
-        background #859ea3
-        focused_workspace #2dce73 #2b9656 #ffffff
+    background #111822
+    statusline #F6F3E8
+    separator  #111822
+    focused_workspace  #111822 #222244 #F6F3E8
+    active_workspace   #555555 #555555 #F6F3E8
+    inactive_workspace #020202 #242424 #888888
+    urgent_workspace   #A00000 #900000 #F6F3E8
+    binding_mode       #A00000 #900000 #F6F3E8
  }
-        status_command i3status
-        position       top
+        status_command i3blocks
+        position       bottom
 }
 
 
 exec --no-startup-id fcitx
-exec --no-startup-id feh --bg-scale ~/Downloads/wall2.jpg
+exec --no-startup-id feh --bg-scale ~/dotfiles/yurucamp_kabegami.jpg
 bindsym $mod+n exec --no-startup-id i3lock --fuzzy
 
 # Pulse Audio controls
