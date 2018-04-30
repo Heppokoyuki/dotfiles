@@ -29,6 +29,7 @@ set laststatus=2
 filetype plugin indent on
 syntax on
 
+set encoding=utf8
 set fenc=utf-8
 set autoread
 set hidden
