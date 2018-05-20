@@ -13,7 +13,8 @@ call dein#add('Shougo/neocomplete.vim')
 call dein#add('thinca/vim-ref')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('osyo-manga/vim-watchdogs')
-call dein#add('tomasr/molokai')
+call dein#add('altercation/vim-colors-solarized')
+" call dein#add('tomasr/molokai')
 " call dein#add('scrooloose/syntastic')
 call dein#end()
 
@@ -36,7 +37,11 @@ set hidden
 set showcmd
 set wildmode=list:longest
 syntax on
-colorscheme molokai
+" colorscheme molokai
+syntax enable
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors=256
 set t_Co=256
 set autoindent
 set expandtab
@@ -67,7 +72,7 @@ inoremap <C-a> <Esc>^a
 noremap <C-e> <Esc>$a
 noremap <C-a> <Esc>^a
 
-
+" Death to the devilish cross key.
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -76,9 +81,6 @@ inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
-highlight Pmenu ctermbg=4
-highlight PmenuSel ctermbg=1
-highlight PMenuSbar ctermbg=4
 
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
