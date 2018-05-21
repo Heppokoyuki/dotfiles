@@ -1,6 +1,10 @@
 " 適当に変えて
 set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
 
+set background=dark
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+
 call dein#begin('~/.vim/dein')
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/neosnippet.vim')
@@ -14,7 +18,6 @@ call dein#add('thinca/vim-ref')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('osyo-manga/vim-watchdogs')
 call dein#add('altercation/vim-colors-solarized')
-" call dein#add('tomasr/molokai')
 " call dein#add('scrooloose/syntastic')
 call dein#end()
 
@@ -30,24 +33,20 @@ set laststatus=2
 filetype plugin indent on
 syntax on
 
+colorscheme solarized
+
 set encoding=utf8
 set fenc=utf-8
 set autoread
 set hidden
 set showcmd
 set wildmode=list:longest
-syntax on
-" colorscheme molokai
 syntax enable
-set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
-set t_Co=256
 set autoindent
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set cursorline
+" set cursorline
 set number
 set noswapfile
 set visualbell
