@@ -18,6 +18,7 @@ call dein#add('thinca/vim-ref')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('osyo-manga/vim-watchdogs')
 call dein#add('altercation/vim-colors-solarized')
+call dein#add('Lokaltog/vim-easymotion')
 " call dein#add('scrooloose/syntastic')
 call dein#end()
 
@@ -80,6 +81,21 @@ inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
+
+" easymotion config
+map <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+nmap s <Plug>(easymotion-overwin-f2)
+vmap s <Plug>(easymotion-bd-f2)
+
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+map <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+let g:EasyMotion_do_mapping = 0
 
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
