@@ -23,8 +23,8 @@ URxvt.internalBorder:       3
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt*font: xft:mono:medium:size=13
-xterm*faceName: xft:mono:medium:size=13
+URxvt*font: xft:Anonymous Pro:size=13,xft:IPAGothic:size=11:antialias=true
+xterm*faceName: xft:Anonymous Pro:size=13:wight=Bold,xft:IPAGothic:size=11:wight=Bold:antialias=true
 
 ! Fix font space
 URxvt*letterSpace: -1

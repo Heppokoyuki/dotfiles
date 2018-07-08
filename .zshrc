@@ -13,6 +13,8 @@ cd ()
 }
 export PATH="$PATH:/home/yuki/.gem/ruby/1.9.1/bin"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export PATH="$PATH:/home/yuki/.review/bin/"
+export PATH="$PATH:/home/yuki/.cargo/bin/"
 
 setopt list_packed
 setopt nolistbeep
@@ -33,6 +35,6 @@ function install_powerline_precmd() {
   precmd_functions+=(powerline_precmd)
 }
 
-if [ "$TERM" != "linux" ]; then
+if [ "$TERM" != "linux" ] && [ "$TERM" != "rxvt-unicode-256color" ]; then
     install_powerline_precmd
 fi
