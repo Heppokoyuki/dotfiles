@@ -10,12 +10,12 @@
 
 [setup.sh](/setup.sh) ArchLinuxの環境構築スクリプト
 
-[dotfileslink.sh](/dotfileslink.sh) 諸々の環境を自動構築してくれるスクリプト
+[dotfilesLink.sh](/dotfilesLink.sh) 諸々の環境を自動構築してくれるスクリプト
 
 ## Installation
 
     $ git clone https://github.com/Heppokoyuki/dotfiles.git
-    $ ./dotfileslink.sh
+    $ ./dotfilesLink.sh
 
 ## Author
 
