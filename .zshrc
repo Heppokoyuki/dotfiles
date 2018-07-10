@@ -16,6 +16,20 @@ export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export PATH="$PATH:/home/yuki/.review/bin/"
 export PATH="$PATH:/home/yuki/.cargo/bin/"
 
+source ~/.zplug/init.zsh
+
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-autosuggestions", defer:2
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load --verbose
+
 setopt list_packed
 setopt nolistbeep
 setopt nobeep

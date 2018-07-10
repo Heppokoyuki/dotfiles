@@ -40,6 +40,14 @@ else
     else
         :
     fi
+
+    yorn "Do you want to install zplug?"
+    if [ $? -eq 0 ]; then
+        curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+    else
+        :
+    fi
+
     sudo pacman -Sy powerline-fonts python python-pip neofetch ruby sakura zsh-completions
     sudo pip install --upgrade pip
     sudo pip install powerline-shell
@@ -49,3 +57,4 @@ else
     ln -sf $DOTPATH/config $HOME/.config/i3/config
     ln -sf $DOTPATH/.Xdefaults $HOME/.Xdefaults
 fi
+
