@@ -19,6 +19,7 @@ call dein#add('tomtom/tcomment_vim')
 call dein#add('osyo-manga/vim-watchdogs')
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('Lokaltog/vim-easymotion')
+call dein#add('vim-scripts/dbext.vim')
 " call dein#add('scrooloose/syntastic')
 call dein#end()
 
@@ -209,3 +210,15 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/
 "    w
 "    SyntasticCheck
 " endfunction
+"
+" gtags settings
+map <C-h> :Gtags -f %<CR>
+map <C-j> :GtagsCursor<CR>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
+
+" dbext settings
+if filereadable(expand('~/.dbext_profile'))
+    source ~/.dbext_profile
+endif
+

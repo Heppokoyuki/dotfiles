@@ -33,22 +33,33 @@ zplug load --verbose
 setopt list_packed
 setopt nolistbeep
 setopt nobeep
-autoload -Uz vcs_info    
-setopt prompt_subst    
 
-function powerline_precmd() {
-    PS1="$(powerline-shell --shell zsh $?)"
-}
+PROMPT='%F{green}%n%f/%m%B%(?.%F{blue}%(!.#. :))%f.%F{red}%(!.#. :()%f)%b '
+RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
-if [ "$TERM" != "linux" ] && [ "$TERM" != "rxvt-unicode-256color" ]; then
-    install_powerline_precmd
-fi
+#function powerline_precmd() {
+#    PS1="$(powerline-shell --shell zsh $?)"
+#}
+#
+#function install_powerline_precmd() {
+#  for s in "${precmd_functions[@]}"; do
+#    if [ "$s" = "powerline_precmd" ]; then
+#      return
+#    fi
+#  done
+#  precmd_functions+=(powerline_precmd)
+#}
+#
+#if [ "$TERM" != "linux" ] && [ "$TERM" != "rxvt-unicode-256color" ]; then
+#    install_powerline_precmd
+#fi

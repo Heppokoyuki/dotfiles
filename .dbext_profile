@@ -1,0 +1,2 @@
+let g:dbext_default_profile_mysqlnodb = 'type=MYSQL:host=127.0.0.1:user=root:passwd=azumax23:dbname=extonic'
+
