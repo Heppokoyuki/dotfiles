@@ -56,5 +56,6 @@ else
     ln -sf $DOTPATH/.zshrc $HOME/.zshrc
     ln -sf $DOTPATH/config $HOME/.config/i3/config
     ln -sf $DOTPATH/.Xdefaults $HOME/.Xdefaults
+    ln -sf $DOTPATH/.dbext_profile $HOME/.dbext_profile
 fi
 
