@@ -52,10 +52,12 @@ else
     sudo pip install --upgrade pip
     sudo pip install powerline-shell
 
-    ln -sf $DOTPATH/.vimrc $HOME/.vimrc
-    ln -sf $DOTPATH/.zshrc $HOME/.zshrc
+    ln -sf $DOTPATH/vimrc $HOME/.vimrc
+    ln -sf $DOTPATH/zshrc $HOME/.zshrc
     ln -sf $DOTPATH/config $HOME/.config/i3/config
-    ln -sf $DOTPATH/.Xdefaults $HOME/.Xdefaults
-    ln -sf $DOTPATH/.dbext_profile $HOME/.dbext_profile
+    ln -sf $DOTPATH/Xdefaults $HOME/.Xdefaults
+    ln -sf $DOTPATH/dbext_profile $HOME/.dbext_profile
+    sudo chown root $DOTPATH/dbext_profile
+    ln -sf $DOTPATH/latexmkrc $HOME/.latexmkrc
 fi
 
