@@ -20,6 +20,7 @@ call dein#add('osyo-manga/vim-watchdogs')
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('Lokaltog/vim-easymotion')
 call dein#add('vim-scripts/dbext.vim')
+call dein#add('lervag/vimtex')
 " call dein#add('scrooloose/syntastic')
 call dein#end()
 
@@ -52,7 +53,7 @@ set shiftwidth=4
 set number
 set noswapfile
 set visualbell
-set clipboard=unnamed,autoselect
+set clipboard+=unnamedplus
 set noautoindent
 set nosmartindent
 
@@ -223,3 +224,9 @@ if filereadable(expand('~/.dbext_profile'))
 endif
 
 let  g:dbext_default_history_file = '~/.dbext_history'
+
+" vimtex settings
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.tex = g:vimtex#re#neocomplete
