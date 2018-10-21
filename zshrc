@@ -16,11 +16,12 @@ export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export PATH="$PATH:/home/yuki/.review/bin/"
 export PATH="$PATH:/home/yuki/.cargo/bin/"
 
-function mdtopdf(){
-  pandoc $1.md -o $2.pdf -V documentclass=ltjsarticle --pdf-engine=lualatex --self-contained
-}
-function htmltopdf(){
-  pandoc $1.html -o $2.pdf -V documentclass=ltjsarticle --pdf-engine=lualatex
+alias vim=nvim
+
+extonic ()
+{
+    gnome-terminal -e 'bash -c "cd /home/yuki/workspace/extonic/guiding-cms/public && php -S localhost:3000"'
+    gnome-terminal -e 'bash -c "cd /home/yuki/workspace/extonic/guiding-cms/public && php -S localhost:3333"'
 }
 source ~/.zplug/init.zsh
 
