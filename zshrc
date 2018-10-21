@@ -1,4 +1,3 @@
-# Created by azuma for 5.3.1
 fpath=(~/.zsh-completions $fpath)
 autoload -U compinit
 compinit
