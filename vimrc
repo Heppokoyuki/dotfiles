@@ -53,7 +53,7 @@ set shiftwidth=4
 set number
 set noswapfile
 set visualbell
-set clipboard+=unnamedplus
+set clipboard+=unnamed
 set noautoindent
 set nosmartindent
 
