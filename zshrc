@@ -19,8 +19,10 @@ alias vim=nvim
 
 extonic ()
 {
-    gnome-terminal -e 'bash -c "cd /home/yuki/workspace/extonic/guiding-cms/public && php -S localhost:3000"'
-    gnome-terminal -e 'bash -c "cd /home/yuki/workspace/extonic/guiding-cms/public && php -S localhost:3333"'
+    gnome-terminal -e 'bash -c "cd /home/yuki/workspace/syukatsu-net/guiding-cms/public && php -S localhost:3000"'
+    gnome-terminal -e 'bash -c "cd /home/yuki/workspace/syukatsu-net/guiding-cms/public && php -S localhost:3333"'
+    gnome-terminal -e 'bash -c "cd /home/yuki/workspace/syukatsu-net/sl-cms/public && php -S localhost:8000"'
+    gnome-terminal -e 'bash -c "cd /home/yuki/workspace/syukatsu-net/sl-cms/public && php -S localhost:8888"'
 }
 source ~/.zplug/init.zsh
 
