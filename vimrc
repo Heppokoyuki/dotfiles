@@ -20,6 +20,7 @@ call dein#add('osyo-manga/vim-watchdogs')
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('Lokaltog/vim-easymotion')
 call dein#add('vim-scripts/dbext.vim')
+call dein#add('lervag/vimtex')
 " call dein#add('scrooloose/syntastic')
 call dein#end()
 
@@ -52,51 +53,11 @@ set shiftwidth=4
 set number
 set noswapfile
 set visualbell
-set clipboard=unnamed,autoselect
+set clipboard+=unnamed
 set noautoindent
 set nosmartindent
 
-let g:indent_guides_enable_on_vim_startup = 1
-noremap :tree :NERDTreeToggle
-
-let g:php_baselib = 1
-let g:php_htmlInStrings = 1
-let g:php_noShortTags = 1
-let g:php_sql_query = 1
-
-set ts=4 sw=4 et
-let g:indent_guides_start_lecel = 2
-let g:indent_guides_guide_size = 1
-
-inoremap <C-e> <Esc>$a
-inoremap <C-a> <Esc>^a
-noremap <C-e> <Esc>$a
-noremap <C-a> <Esc>^a
-
-" Death to the devilish cross key.
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-
-" easymotion config
-map <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-
-nmap s <Plug>(easymotion-overwin-f2)
-vmap s <Plug>(easymotion-bd-f2)
-
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
-
-map <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
-
-let g:EasyMotion_do_mapping = 0
+" NEO COMPLETE CONFIG "
 
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
@@ -156,7 +117,6 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType go setlocal omnifunc=gocomplete#Complete
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
@@ -170,47 +130,52 @@ endif
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
-augroup MyXML
-    autocmd FileType xml inoremap <buffer> </ </<C-x><C-o>
-    autocmd FileType html inoremap <buffer> </ </<C-x><C-o>
-augroup END
+let g:indent_guides_enable_on_vim_startup = 1
+noremap :tree :NERDTreeToggle
+
+let g:php_baselib = 1
+let g:php_htmlInStrings = 1
+let g:php_noShortTags = 1
+let g:php_sql_query = 1
+
+set ts=4 sw=4 et
+let g:indent_guides_start_lecel = 2
+let g:indent_guides_guide_size = 1
+
+inoremap <C-e> <Esc>$a
+inoremap <C-a> <Esc>^a
+noremap <C-e> <Esc>$a
+noremap <C-a> <Esc>^a
+
+" Death to the devilish cross key.
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+
+" easymotion config
+map <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+nmap s <Plug>(easymotion-overwin-f2)
+vmap s <Plug>(easymotion-bd-f2)
+
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+map <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+let g:EasyMotion_do_mapping = 0
 
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-"set snippet file dir
-let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
-" let g:syntastic_enable_signs=1
-"let g:syntastic_auto_loc_list=2
-"let g:syntastic_mode_map = {'mode': 'passive'}
-"augroup AutoSyntastic
-"    autocmd!
-"    autocmd InsertLeave,TextChanged * call s:syntastic()
-"augroup END
-"function! s:syntastic()
-"    w
-"    SyntasticCheck
-" endfunction
-"
 " gtags settings
 map <C-h> :Gtags -f %<CR>
 map <C-j> :GtagsCursor<CR>
@@ -223,3 +188,10 @@ if filereadable(expand('~/.dbext_profile'))
 endif
 
 let  g:dbext_default_history_file = '~/.dbext_history'
+
+" vimtex settings
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.tex = g:vimtex#re#neocomplete
+let g:latex_latexmk_options = '-pdf'

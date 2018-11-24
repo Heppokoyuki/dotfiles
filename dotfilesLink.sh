@@ -48,9 +48,7 @@ else
         :
     fi
 
-    sudo pacman -Sy powerline-fonts python python-pip neofetch ruby sakura zsh-completions
-    sudo pip install --upgrade pip
-    sudo pip install powerline-shell
+    sudo pacman -Sy neofetch ruby sakura zsh-completions
 
     ln -sf $DOTPATH/vimrc $HOME/.vimrc
     ln -sf $DOTPATH/zshrc $HOME/.zshrc
@@ -59,5 +57,10 @@ else
     ln -sf $DOTPATH/dbext_profile $HOME/.dbext_profile
     sudo chown root $DOTPATH/dbext_profile
     ln -sf $DOTPATH/latexmkrc $HOME/.latexmkrc
+
+    yorn "Do you want to set up neovim?"
+    if [ $? -eq 0 ]; then
+        ln -sf ~/.vim $HOME/.config/nvim
+        ln -sf ~/.vimrc $HOME/.config/nvim/init.vim
 fi
 

@@ -183,7 +183,7 @@ bar {
 
 
 exec --no-startup-id fcitx
-exec --no-startup-id feh --bg-fill ~/dotfiles/linuxwall.jpg
+# exec --no-startup-id feh --bg-fill ~/dotfiles/linuxwall.jpg
 bindsym $mod+n exec --no-startup-id i3lock --fuzzy
 
 # Pulse Audio controls
