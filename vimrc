@@ -21,6 +21,15 @@ call dein#add('altercation/vim-colors-solarized')
 call dein#add('Lokaltog/vim-easymotion')
 call dein#add('vim-scripts/dbext.vim')
 call dein#add('lervag/vimtex')
+call dein#add('ncm2/ncm2')
+call dein#add('roxma/nvim-yarp')
+call dein#add('ncm2/ncm2-bufword')
+call dein#add('ncm2/ncm2-path')
+call dein#add('ncm2/ncm2-cssomni')
+call dein#add('ncm2/ncm2-tern')
+call dein#add('phpactor/ncm2-phpactor')
+call dein#add('ncm2/ncm2-pyclang')
+call dein#add('ncm2/ncm2-gtags')
 " call dein#add('scrooloose/syntastic')
 call dein#end()
 
@@ -32,6 +41,8 @@ call map(dein#check_clean(), "delete(v:val, 'rf')")
 
 let g:powerline_pycmd="py3"
 set laststatus=2
+
+let g:python3_host_prog='/usr/bin/python3'
 
 filetype plugin indent on
 syntax on
@@ -195,3 +206,9 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 endif
 let g:neocomplete#sources#omni#input_patterns.tex = g:vimtex#re#neocomplete
 let g:latex_latexmk_options = '-pdf'
+
+" ncm2 completion settings
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+
+
