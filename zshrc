@@ -19,10 +19,8 @@ alias vim=nvim
 
 extonic ()
 {
-    gnome-terminal -e 'bash -c "cd /home/yuki/workspace/syukatsu-net/guiding-cms/public && php -S localhost:3000"'
-    gnome-terminal -e 'bash -c "cd /home/yuki/workspace/syukatsu-net/guiding-cms/public && php -S localhost:3333"'
-    gnome-terminal -e 'bash -c "cd /home/yuki/workspace/syukatsu-net/sl-cms/public && php -S localhost:8000"'
-    gnome-terminal -e 'bash -c "cd /home/yuki/workspace/syukatsu-net/sl-cms/public && php -S localhost:8888"'
+    urxvt -e bash -c "cd /home/yuki/workspace/syukatsu-net/sl-cms/public && php -S localhost:8000" &
+    urxvt -e bash -c "cd /home/yuki/workspace/syukatsu-net/sl-cms/public && php -S localhost:8888" &
 }
 source ~/.zplug/init.zsh
 
@@ -54,6 +52,8 @@ zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+
+alias emacs="emacs -nw"
 
 #function powerline_precmd() {
 #    PS1="$(powerline-shell --shell zsh $?)"
