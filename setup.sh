@@ -30,8 +30,6 @@ echo 'Section "InputClass"' >> /etc/X11/xorg.conf.d/10-keyboard.conf
 echo 'Identifier "system-keyboard"' >> /etc/X11/xorg.conf.d/10-keyboard.conf
 echo 'MatchIsKeyboard "on"' >> /etc/X11/xorg.conf.d/10-keyboard.conf
 echo 'Option "XkbLayout" "us,jp106"' >> /etc/X11/xorg.conf.d/10-keyboard.conf
-echo 'Option "XkbModel" "pc104"' >> /etc/X11/xorg.conf.d/10-keyboard.conf
-echo 'Option "XkbVariant" ",dvorak"' >> /etc/X11/xorg.conf.d/10-keyboard.conf
 echo 'Option "XkbOptions" "grp:alt_shift_toggle"' >> /etc/X11/xorg.conf.d/10-keyboard.conf
 echo 'EndSection' >> /etc/X11/xorg.conf.d/10-keyboard.conf
 
