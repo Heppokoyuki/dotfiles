@@ -25,6 +25,7 @@ echo -e "      \/                               \/     \/ "
 
 
 DOTPATH=$HOME/dotfiles
+DEPENDENCIES=neofetch ruby sakura zsh-completions the_silver_search ctags fzf
 
 echo -e "\e[m\$DOTPATH:$DOTPATH\n"
 
@@ -32,11 +33,10 @@ yorn "Do you want to continue?"
 if [ $? -eq 1 ]; then
     exit 1
 else
-    yorn "Do you want to install dein.vim?"
+    yorn "Do you want to install vim-plug?"
     if [ $? -eq 0 ]; then
-        mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
-        git clone https://github.com/Shougo/dein.vim \
-            ~/.vim/dein/repos/github.com/Shougo/dein.vim
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     else
         :
     fi
@@ -48,7 +48,7 @@ else
         :
     fi
 
-    sudo pacman -Sy neofetch ruby sakura zsh-completions
+    sudo pacman -Sy $DEPENDENCIES
 
     ln -sf $DOTPATH/vimrc $HOME/.vimrc
     ln -sf $DOTPATH/zshrc $HOME/.zshrc

@@ -26,9 +26,16 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 export PATH=/home/yuki/.review/bin:$PATH
 export PATH=/opt/kendryte-toolchain/bin:$PATH
 export PATH=/home/yuki/.npm-global/bin:$PATH
 export PATH=/usr/lib/emscripten:$PATH
 export PATH=/home/yuki/zen-linux-x86_64-0.8.20191124+552247019:$PATH
 export PATH=/home/yuki/zig/build/bin:$PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
