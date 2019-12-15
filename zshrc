@@ -9,6 +9,32 @@ cd ()
 {
     builtin cd "$@" && ls
 }
+export PATH="$PATH:/home/yuki/.gem/ruby/1.9.1/bin"
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export PATH="$PATH:/home/yuki/.review/bin/"
+export PATH="$PATH:/home/yuki/.cargo/bin/"
+export PATH="$PATH:/usr/lib/distcc/bin/"
+export PATH="$PATH:/home/yuki/zen-linux-x86_64-0.8.20191124+552247019/"
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+source ~/.zplug/init.zsh
+
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-autosuggestions", defer:2
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load --verbose
+
 setopt list_packed
 setopt nolistbeep
 setopt nobeep
@@ -25,17 +51,5 @@ zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
-
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-export PATH=/home/yuki/.review/bin:$PATH
-export PATH=/opt/kendryte-toolchain/bin:$PATH
-export PATH=/home/yuki/.npm-global/bin:$PATH
-export PATH=/usr/lib/emscripten:$PATH
-export PATH=/home/yuki/zen-linux-x86_64-0.8.20191124+552247019:$PATH
-export PATH=/home/yuki/zig/build/bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
