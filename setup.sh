@@ -42,6 +42,9 @@ echo 'ibus-daemon -drx' >> /home/yuki/.xprofile
 
 pacman -S adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts
 
+# for SSD
+systemctl enable fstrim.timer
+
 pacman -S intel-ucode efibootmgr grub
 
 # for x86_64 UEFI grub
