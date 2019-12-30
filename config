@@ -178,7 +178,7 @@ bar {
     binding_mode       #A00000 #900000 #F6F3E8
  }
         status_command i3status
-        position       top
+        position       bottom
 }
 
 

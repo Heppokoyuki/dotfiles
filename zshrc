@@ -7,7 +7,7 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 zstyle ':completion:*:default' menu select=2
 cd ()
 {
-    builtin cd "$@" && ls
+    builtin cd "$@" && ls --color=auto
 }
 export PATH="$PATH:/home/yuki/.gem/ruby/1.9.1/bin"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')

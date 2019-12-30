@@ -62,5 +62,6 @@ else
     if [ $? -eq 0 ]; then
         ln -sf ~/.vim $HOME/.config/nvim
         ln -sf ~/.vimrc $HOME/.config/nvim/init.vim
+    fi
 fi
 
