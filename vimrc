@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'ziglang/zig.vim'
+Plug 'vim-scripts/verilog.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
@@ -33,6 +34,8 @@ set belloff=all
 nmap <Leader>t :FZF<CR>
 nmap <Leader>h :Ag<CR>
 nmap <F8> :TagbarToggle<CR>
+
+au BufRead,BufNewFile *.zen set filetype=zig
 
 " If there is .vimrc.local file in the project, it will loaded and ALE will
 " know the include paths.
