@@ -25,7 +25,7 @@ echo -e "      \/                               \/     \/ "
 
 
 DOTPATH=$HOME/dotfiles
-DEPENDENCIES=neofetch ruby sakura zsh-completions the_silver_search ctags fzf
+DEPENDENCIES=neofetch ruby zsh-completions the_silver_search ctags fzf neovim
 
 echo -e "\e[m\$DOTPATH:$DOTPATH\n"
 
@@ -35,8 +35,8 @@ if [ $? -eq 1 ]; then
 else
     yorn "Do you want to install vim-plug?"
     if [ $? -eq 0 ]; then
-        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     else
         :
     fi
@@ -50,18 +50,15 @@ else
 
     sudo pacman -Sy $DEPENDENCIES
 
-    ln -sf $DOTPATH/vimrc $HOME/.vimrc
     ln -sf $DOTPATH/zshrc $HOME/.zshrc
     ln -sf $DOTPATH/config $HOME/.config/i3/config
     ln -sf $DOTPATH/Xdefaults $HOME/.Xdefaults
-    ln -sf $DOTPATH/dbext_profile $HOME/.dbext_profile
-    sudo chown root $DOTPATH/dbext_profile
     ln -sf $DOTPATH/latexmkrc $HOME/.latexmkrc
 
-    yorn "Do you want to set up neovim?"
-    if [ $? -eq 0 ]; then
-        ln -sf ~/.vim $HOME/.config/nvim
-        ln -sf ~/.vimrc $HOME/.config/nvim/init.vim
-    fi
+    mkdir -p $HOME/.config/nvim/user/init
+    mkdir -p $HOME/.config/nvim/user/plugins
+    ln -sf $DOTPATH/basic.vim $HOME/.config/nvim/user/init/basic.vim
+    ln -sf $DOTPATH/keymap.vim $HOME/.config/nvim/user/init/keymap.vim
+    ln -sf $DOTPATH/plugins.vim $HOME/.config/nvim/user/init/plugins.vim
 fi
 
