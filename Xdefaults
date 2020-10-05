@@ -20,6 +20,12 @@ URxvt.font:                 xft:Cica:size=14:antialias=true
 URxvt.letterSpace:          -1
 !URxvt.lineSpace:            0
 
+!! Clipboard
+URxvt.perl-ext-common: clipboard
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt:keysym.M-v: perl:clipboard:paste
+
 !! Color Scheme and Opacity - gruvbox-dark https://github.com/morhetz/gruvbox
 URxvt.depth:                32
 URxvt.color0:               [90]#282828
