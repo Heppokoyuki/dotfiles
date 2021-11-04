@@ -27,6 +27,9 @@ alias egrep='egrep --color=auto'
 
 alias vim='nvim'
 
+alias vpn='systemctl start openvpn-client@client'
+alias svpn='systemctl stop openvpn-client@client'
+
 eval "$(rbenv init -)"
 
 source ~/.zplug/init.zsh
@@ -66,4 +69,6 @@ HISTFILE=~/.zsh_history
 export HISTSIZE=1000
 export SAVEHIST=100000
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+

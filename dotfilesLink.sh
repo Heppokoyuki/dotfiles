@@ -57,8 +57,14 @@ else
 
     mkdir -p $HOME/.config/nvim/user/init
     mkdir -p $HOME/.config/nvim/user/plugins
+    ln -sf $DOTPATH/init.vim $HOME/.config/nvim/init.vim
     ln -sf $DOTPATH/basic.vim $HOME/.config/nvim/user/init/basic.vim
     ln -sf $DOTPATH/keymap.vim $HOME/.config/nvim/user/init/keymap.vim
     ln -sf $DOTPATH/plugins.vim $HOME/.config/nvim/user/init/plugins.vim
+
+    mkdir -p $HOME/.config/fontconfig
+    ln -sf $DOTPATH/fonts.conf $HOME/.config/fontconfig/fonts.conf
+
+    ln -sf $DOTPATH/pam_environment $HOME/.pam_environment
 fi
 
