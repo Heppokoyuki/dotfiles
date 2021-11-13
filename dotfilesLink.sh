@@ -66,5 +66,6 @@ else
     ln -sf $DOTPATH/fonts.conf $HOME/.config/fontconfig/fonts.conf
 
     ln -sf $DOTPATH/pam_environment $HOME/.pam_environment
+    ln -sf $DOTPATH/Xmodmap $HOME/.Xmodmap
 fi
 
