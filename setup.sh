@@ -23,7 +23,7 @@ pacman -S --noconfirm sudo qtcreator boost grub os-prober dosfstools mesa dialog
 pacman -S --noconfirm dhcpcd NetworkManager net-tools iw wpa_supplicant 
 
 # fonts
-pacman -S --noconfirm otf-ipafont adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts noto-fonts adobe-source-code-pro-fonts
+pacman -S --noconfirm otf-ipafont adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji adobe-source-code-pro-fonts
 
 # fcitx5
 pacman -S --noconfirm fcitx5 fcitx5-im fcitx5-mozc
