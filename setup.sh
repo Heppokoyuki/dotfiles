@@ -10,14 +10,6 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 
 echo Fuji > /etc/hostname
 
-systemctl enable dhcpcd.service
-passwd
-
-useradd -m -g wheel -s /bin/zsh yuki
-passwd yuki
-
-visudo
-
 pacman -Syu --noconfirm
 
 # xorgs and dm
@@ -36,8 +28,15 @@ pacman -S --noconfirm otf-ipafont adobe-source-han-sans-jp-fonts adobe-source-ha
 # fcitx5
 pacman -S --noconfirm fcitx5 fcitx5-im fcitx5-mozc
 
+passwd
+useradd -m -g wheel -s /bin/zsh yuki
+passwd yuki
+visudo
+
 ## if lightdm daemon exits with failed code, you should set logind-check-graphical=true to /etc/lightdm/lightdm.conf
 systemctl enable lightdm.service
+
+systemctl enable dhcpcd.service
 
 # yay installation
 sudo -u yuki sh -c "git clone https://aur.archlinux.org/yay && cd yay && makepkg -si --noconfirm && cd .. && rm -rf yay"
